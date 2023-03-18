@@ -1,0 +1,30 @@
+.heading{
+    margin:0;
+    width:100%;
+    font-style: italic;
+    display: flex;
+    justify-content: space-between;
+}
+.heading h6{
+    padding:0.5rem 1rem;
+}
+
+.heading p{
+    margin-top: 1rem;
+    padding:0rem 1rem;
+    background: rgb(203, 187, 187);
+    border-radius: 10px;
+    font-size:0.8rem
+}
+.heading button{
+   
+    font:inherit;
+    background: transparent;
+    color: blue;
+    border: none;
+}
+.heading hr{
+    width:100%;
+    color:black;
+    padding: 2px;
+}

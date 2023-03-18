@@ -46,7 +46,7 @@ const SignUpForm = () => {
             const data = await res.json();
             console.log(data);
             authCtx.login(data.idToken);
-            history.replace('/welcome');
+            history.replace('/profile');
            
           }
           else {

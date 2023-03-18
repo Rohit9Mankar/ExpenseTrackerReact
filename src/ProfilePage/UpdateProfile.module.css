@@ -1,0 +1,56 @@
+.heading{
+    margin:0;
+    width:100%;
+    font-style: italic;
+    display: flex;
+    justify-content: space-between;
+}
+.heading h6{
+    padding:0.5rem 1rem;
+}
+.heading p{
+    margin-top: 1rem;
+    background: rgb(203, 187, 187);
+    border-radius: 10px;
+    font-size:0.8rem;
+    width:50%;
+}
+.heading button{
+   
+    font:inherit;
+    background: transparent;
+    color: blue;
+    border: none;
+}
+ hr{
+    width:100%;
+    color:black;
+    padding: 2px;
+}
+
+.form_contain{
+    margin-left: 30%;
+    font-size:0.7rem;
+    text-align: left;
+    
+}
+
+.form_control{
+    display: flex;
+
+}
+.form_control label{
+  margin: 0px 4px;
+}
+.form_control input{
+    margin: 0px 4px;
+    height:inherit;
+    width:30%;
+}
+.form_contain button{
+    background: rgb(132, 102, 102);
+    color :white;
+    border: 1px solid rgb(132, 102, 102) ;
+    border-radius: 4px;
+margin-top: 5px;
+}
