@@ -94,6 +94,7 @@ const UpdateProfile = () => {
                     <input type="text" ref={ProfileURLInputRef} defaultValue={defProfileUrl}></input>
                 </div>
                 <button type="submit">Update</button>
+                <hr></hr>
             </form>
         </div>
     )
