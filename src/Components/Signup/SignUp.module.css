@@ -1,5 +1,7 @@
 .contain{
-  margin: 8rem auto;
+  margin-top:10rem;
+  margin-left:45%;
+  margin-right:10%;
   width: 50%;
 
 }
@@ -36,28 +38,29 @@
     cursor: pointer;
     font: inherit;
     color: white;
-    background-color: #3541b1;
-    border: 1px solid #3541b1;
-    border-radius: 20px;
+    background-color: #2438ed;
+    border: 1px solid #2438ed;;
+    border-radius: 30px;
+    padding: 0.3rem 1rem;
    width:90%;
   }
   
   .actions button:hover {
-    background-color: #873abb;
-    border-color: #873abb;
+    background-color: #0a116d;
+    color: rgb(215, 227, 247);
   }
   
  .toggle {
-    margin-top: 1rem;
+    margin-top: 1rem ;
     background-color: rgb(154, 211, 154);
     color: #1f1e20;
     border: none;
     border-radius: 5px;
     text-align: center;
-    padding: 1rem 3.5rem;
+    padding: 0.5rem 3.5rem;
   }
   
-  .actions .toggle:hover {
-    background-color: transparent;
-    color: #ae82cc;
+  .toggle:hover {
+    background-color:rgb(11, 78, 11) ;
+    color: #e9ede8;
   }

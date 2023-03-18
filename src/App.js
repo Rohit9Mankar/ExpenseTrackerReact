@@ -1,11 +1,18 @@
 import React from "react";
+import { Route,Switch } from "react-router-dom";
 import SignUpForm from "./Components/Signup/SignUpForm";
 
 function App() {
   return (
-  <React.Fragment>
+    <Switch>
+ <Route path='/'>
     <SignUpForm/>
-  </React.Fragment>
+  </Route>
+  <Route path='/welcome'>
+    <h2>Welcome to the Expense Tracker</h2>
+  </Route>
+    </Switch>
+ 
   )
 }
 
