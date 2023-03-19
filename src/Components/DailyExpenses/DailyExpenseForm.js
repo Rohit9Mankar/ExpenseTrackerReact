@@ -10,14 +10,26 @@ const DailyExpenseForm = () => {
     const AmountInputRef = useRef();
     const CategoryInputRef = useRef();
 
-    const submitHandler = (event) => {
+    const submitHandler = async (event) => {
         event.preventDefault();
         const expenseToBeAdded = {
-            id: Math.random().toString(),
             description: DescriptionInputRef.current.value,
             amount: AmountInputRef.current.value,
             category: CategoryInputRef.current.value
         }
+       const response= await fetch('https://expense-tracker-13e79-default-rtdb.firebaseio.com/expenses.json', {
+            method: "POST",
+            body: JSON.stringify(expenseToBeAdded),
+            headers: {
+                'Content-Type': 'application/json'
+              }
+        });
+
+       if(response.ok){
+        console.log(response.status);
+       }
+
+
         authCtx.addExpense(expenseToBeAdded);
     }
 
