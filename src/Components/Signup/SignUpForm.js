@@ -153,7 +153,7 @@ const SignUpForm = () => {
 
         <div className={classes.actions}>
           {!isLoading && <button type='submit' >Sign Up</button>}
-          <Link >forgot password</Link>
+          {isLogin && <Link to='/forgotPassword'>forgot password</Link>}
           {isLoading && <p>Sending request..</p>}
          
 
