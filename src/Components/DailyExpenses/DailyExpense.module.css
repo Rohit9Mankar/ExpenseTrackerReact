@@ -68,3 +68,11 @@
     margin:auto;
     border:1px solid red;
   }
+
+  .expenseItem button{
+    padding:0.1rem 1rem;
+    background: red;
+    color: white;
+    border-radius: 5px;
+    border: none;
+  }

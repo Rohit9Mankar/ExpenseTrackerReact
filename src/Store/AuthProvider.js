@@ -34,6 +34,11 @@ const AuthProvider = (props) => {
         })
     }
 
+    const removeExpenseHandler=(id)=>{
+        const updatedExpenses=expenseArray.filter((item)=>item.id===id);
+        setExpenseArray(updatedExpenses);
+    }
+
     useEffect(() => {
 
         fetch('https://expense-tracker-13e79-default-rtdb.firebaseio.com/expenses.json')
@@ -55,17 +60,18 @@ const AuthProvider = (props) => {
             })
 
 
-    }, []);
+    }, [expenseArray]);
 
 
     const authContext = {
         expenses: expenseArray,
         addExpense: addExpenseHandler,
+        removeExpense:removeExpenseHandler,
         tokens: tokenId,
         isLoggenIn: userLoggedIn,
         login: loginUserHandler,
         logout: logoutUserHandler
-
+        
 
     };
 

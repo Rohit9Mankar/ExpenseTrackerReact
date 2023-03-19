@@ -9,6 +9,7 @@ const DailyExpenseList = () => {
     const listOfExpenseItems = authCtx.expenses.map((item) => (
         <DailyExpenseItem
             key={item.id}
+            id={item.id}
             description={item.description}
             amount={item.amount}
             category={item.category} />
