@@ -5,6 +5,7 @@ const AuthProvider = (props) => {
     const toBeStoredToken = localStorage.getItem("token");
 
     const [tokenId, setTokenId] = useState(toBeStoredToken);
+    const [expenseArray,setExpenseArray]=useState([]);
 
     const userLoggedIn = !!tokenId;
 
@@ -27,11 +28,17 @@ const AuthProvider = (props) => {
        
     }
 
-
+const addExpenseHandler=(item)=>{
+    setExpenseArray((prev)=>{
+        return [...prev,item];
+    })
+}
 
 
 
     const authContext = {
+        expenses:expenseArray,
+        addExpense:addExpenseHandler,
         tokens: tokenId,
         isLoggenIn: userLoggedIn,
         login: loginUserHandler,

@@ -41,7 +41,7 @@ return(
         color:"white",
         borderRadius:"8px",
         border:"1px solid red",
-    margin:"2rem 15rem"}}
+    margin:"2rem 2rem"}}
     >Verify E-mail</button>
     </>
 )
