@@ -24,7 +24,7 @@ const AuthProvider = (props) => {
     const logoutUserHandler = () => {
         setTokenId(null);
         localStorage.removeItem("token");
-        localStorage.remove("email");
+       
     }
 
 
