@@ -1,11 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
-import AuthContext from '../Store/AuthContext';
+import { useDispatch } from 'react-redux';
 import classes from './Heading.module.css';
+import { AuthActions } from '../Store/AuthSlice';
 
 const Heading = () => {
     const history = useHistory();
-    const authCtx = useContext(AuthContext);
+    const dispatch=useDispatch();
 
     const completeNowHandler = (event) => {
         event.preventDefault();
@@ -14,7 +15,7 @@ const Heading = () => {
 
     const logoutHandler = (event) => {
         event.preventDefault();
-        authCtx.logout();
+        dispatch(AuthActions.logout());
         history.replace('/');
     }
 

@@ -1,20 +1,21 @@
-import { useState, useRef,useContext } from 'react';
+import { useState, useRef } from 'react';
 import { Link,useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import classes from './SignUp.module.css';
-import AuthContext from '../../Store/AuthContext';
+import { AuthActions } from '../../Store/AuthSlice';
 
 const SignUpForm = () => {
   const [isLogin, setIsLogin] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+
+  const dispatch=useDispatch();
 
   const history=useHistory();
 
   const newUserName = useRef();
   const newUserPassword = useRef();
   const ReEnterPassword=useRef();
-
-  const authCtx=useContext(AuthContext);
 
   const switchAuthModeHandler = () => {
     setIsLogin((prevState) => !prevState);
@@ -45,7 +46,7 @@ const SignUpForm = () => {
           if (res.ok) {
             const data = await res.json();
             console.log(data);
-            authCtx.login(data.idToken);
+            dispatch(AuthActions.login(data.idToken));
             history.replace('/profile');
            
           }

@@ -1,10 +1,12 @@
-import { useContext, useRef } from "react";
-import AuthContext from "../../Store/AuthContext";
+import {  useRef } from "react";
+import { useDispatch} from "react-redux";
+import { ExpenseActions } from "../../Store/ExpenseSlice";
 import classes from './DailyExpense.module.css';
 
-const DailyExpenseForm = () => {
 
-    const authCtx = useContext(AuthContext);
+const DailyExpenseForm = () => {
+const dispatch=useDispatch();
+
 
     const DescriptionInputRef = useRef();
     const AmountInputRef = useRef();
@@ -30,7 +32,7 @@ const DailyExpenseForm = () => {
        }
 
 
-        authCtx.addExpense(expenseToBeAdded);
+       dispatch(ExpenseActions.addItem(expenseToBeAdded));
     }
 
     return (
@@ -59,7 +61,10 @@ const DailyExpenseForm = () => {
             </select>
             <br />
             <button type="submit">Submit</button>
+
+           
         </form>
+        
     )
 };
 export default DailyExpenseForm;

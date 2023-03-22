@@ -1,9 +1,10 @@
-import { useContext } from 'react';
-import AuthContext from '../../Store/AuthContext';
+
+import { useDispatch} from "react-redux";
+import { ExpenseActions } from "../../Store/ExpenseSlice";
 import classes from './DailyExpense.module.css';
 
 const DailyExpenseItem = (props) => {
-    const authCtx = useContext(AuthContext);
+    const dispatch=useDispatch();
 
     const deleteHandler = (event) => {
        event.preventDefault();
@@ -15,7 +16,7 @@ const DailyExpenseItem = (props) => {
             }
         }).then((res) => {
             if (res.ok) {
-                authCtx.removeExpense(props.id);
+                dispatch(ExpenseActions.removeItem(props.id));
                 console.log("Successfully deleted the expense")
             }
             else {
@@ -29,7 +30,7 @@ const DailyExpenseItem = (props) => {
      document.getElementById("description").value=props.description;
      document.getElementById("amount").value=props.amount;
      document.getElementById("dropdown-menu").value=props.category;
-     deleteHandler(event);
+     
     }
 
     return (
