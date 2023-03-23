@@ -1,78 +1,105 @@
-.form_container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px;
-    width:50%;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #f7f7f7;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  .form_container label {
-    margin-right: 10px;
-  font-size: 18px;
-  }
-  
-  .form_container input,
-  select {
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    box-shadow: 0 0 5px #ddd;
-    font-size: 16px;
-    width: 100%;
-  }
-  
-  .form_container select {
-    background-color: #fff;
-  cursor: pointer;
-  }
-  
-  .form_container button {
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-    font-size: 18px;
-  }
-  
-  .form_container button:hover {
-    background-color: #0062cc;
-  }
-  
-  .form_container input:focus,
-  .form_container select:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 5px #007bff;
-  }
-  
-  .expenseItem{
-    display: flex;
-    justify-content: space-between;
-    font-size: 1rem;
-    background: burlywood;
-    color: black;
-    padding:0.3rem 1.5rem;
-    width:90%;
-    margin:1rem 0rem;
-  }
-  .listExpense{
-    padding: 5px;
-    width:40%;
-    margin:auto;
-    border:1px solid red;
-  }
 
-  .expenseItem button{
-    padding:0.1rem 1rem;
-    background: red;
-    color: white;
-    border-radius: 5px;
-    border: none;
-  }
+.form_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin:auto;
+  margin-bottom: 2rem;
+  width: 50%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.form_container label {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.form_container input,
+select {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 5px #ddd;
+  font-size: 16px;
+  width: 100%;
+}
+
+.form_container select {
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.form_container button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.form_container button:hover {
+  background-color: #0062cc;
+}
+
+.form_container input:focus,
+.form_container select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px #007bff;
+}
+
+.expenseItem {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-weight: bold;
+  background: burlywood;
+  color:rgb(126, 15, 15);
+  padding: 0.3rem 1rem;
+  width: 100%;
+ 
+  margin: 1rem 0rem;
+}
+.listHeading{
+  display: flex;
+ 
+  color:#944407
+}
+
+.listHeading_Items{
+  padding: 0.1rem 1.8rem;
+  font-weight: bold;
+}
+.listExpense {
+  width: 70%;
+  margin: auto;
+  margin-bottom: 2rem;
+  border: 2px solid red;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #dfcca5be;
+  box-shadow: 0px 2px 4px rgba(130, 25, 25, 0.2);
+}
+
+.activatPremium button {
+  padding: 0.4rem 1.5rem;
+  background: rgb(155, 74, 74);
+  color: white;
+  border-radius: 5px;
+  border: none;
+  margin: 1rem 0rem;
+}
+
+.expenseItem button {
+  padding: 0.1rem 1rem;
+  background: red;
+  color: white;
+  border-radius: 5px;
+  border: none;
+}

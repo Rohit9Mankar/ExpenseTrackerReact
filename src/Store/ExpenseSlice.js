@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialExpenseState = {
-    expenses: []
+    expenses: [],
 };
 
 const expenseSlice = createSlice({
@@ -10,13 +10,17 @@ const expenseSlice = createSlice({
     reducers: {
         addItem(state, action) {
             state.expenses.push(action.payload);
+
         },
         loadExpense(state, action) {
             state.expenses = action.payload;
         },
         removeItem(state, action) {
-          
-            state.expenses =  state.expenses.filter((item) => item._id === action.payload);
+
+            const updated = state.expenses.filter((item) => {
+                return item.id !== action.payload
+            });
+            state.expenses = updated;
             console.log(state.expenses);
         }
     }

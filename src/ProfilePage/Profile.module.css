@@ -1,0 +1,25 @@
+.whiteTheme{
+    background-color: rgb(247, 250, 253);
+}
+.blackTheme{
+    background-color: rgb(67, 68, 70);
+    color:white;
+}
+
+.toggle{
+    display: flex;
+    justify-content: space-around;
+    width:20%;
+}
+.toggle p{
+    margin:auto
+}
+
+.toggle button{
+    border-radius: 5px;
+    border:none;
+    margin: auto;
+    padding:0px 0.5rem;
+    background:black;
+    color: white;
+}

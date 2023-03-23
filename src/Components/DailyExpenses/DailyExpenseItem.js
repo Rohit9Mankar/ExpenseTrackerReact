@@ -7,6 +7,7 @@ const DailyExpenseItem = (props) => {
     const dispatch=useDispatch();
 
     const deleteHandler = (event) => {
+        console.log(props.id);
        event.preventDefault();
         console.log(props.id);
         fetch(`https://expense-tracker-13e79-default-rtdb.firebaseio.com/expenses/${props.id}.json`, {
@@ -16,11 +17,12 @@ const DailyExpenseItem = (props) => {
             }
         }).then((res) => {
             if (res.ok) {
+               
                 dispatch(ExpenseActions.removeItem(props.id));
                 console.log("Successfully deleted the expense")
             }
             else {
-                console.log(res.status);
+                return res.json().then((data)=>console.log(data));
             }
         })
     };
@@ -36,8 +38,9 @@ const DailyExpenseItem = (props) => {
     return (
         <div className={classes.expenseItem}>
             <div>{props.description}</div>
-            <div>$ {props.amount}</div>
             <div>{props.category}</div>
+            <div>$ {props.amount}</div>
+            
             <div>
                 <button onClick={editHandler}>Edit</button>
             </div>

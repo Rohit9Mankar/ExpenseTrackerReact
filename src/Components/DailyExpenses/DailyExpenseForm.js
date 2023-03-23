@@ -1,11 +1,11 @@
-import {  useRef } from "react";
-import { useDispatch} from "react-redux";
+import { useRef } from "react";
+import { useDispatch } from "react-redux";
 import { ExpenseActions } from "../../Store/ExpenseSlice";
 import classes from './DailyExpense.module.css';
 
 
 const DailyExpenseForm = () => {
-const dispatch=useDispatch();
+    const dispatch = useDispatch();
 
 
     const DescriptionInputRef = useRef();
@@ -15,24 +15,39 @@ const dispatch=useDispatch();
     const submitHandler = async (event) => {
         event.preventDefault();
         const expenseToBeAdded = {
+
             description: DescriptionInputRef.current.value,
             amount: AmountInputRef.current.value,
             category: CategoryInputRef.current.value
         }
-       const response= await fetch('https://expense-tracker-13e79-default-rtdb.firebaseio.com/expenses.json', {
+        const response = await fetch('https://expense-tracker-13e79-default-rtdb.firebaseio.com/expenses.json', {
             method: "POST",
             body: JSON.stringify(expenseToBeAdded),
             headers: {
                 'Content-Type': 'application/json'
-              }
+            }
         });
 
-       if(response.ok){
-        console.log(response.status);
-       }
+        if (response.ok) {
+            console.log(response.status);
+        }
+
+        const newResponse = await fetch('https://expense-tracker-13e79-default-rtdb.firebaseio.com/expenses.json')
+        if (newResponse.ok) {
+            const data = await newResponse.json();
+            const loadedExpenses = [];
+            for (let key in data) {
+                loadedExpenses.push({
+                    id: key, ...data[key]
+                })
+
+            }
+            dispatch(ExpenseActions.loadExpense(loadedExpenses));
+        }
+
+        
 
 
-       dispatch(ExpenseActions.addItem(expenseToBeAdded));
     }
 
     return (
@@ -55,16 +70,18 @@ const dispatch=useDispatch();
             <label htmlFor="dropdown-menu">Category</label>
             <select id="dropdown-menu" ref={CategoryInputRef}>
                 <option value="Food">Food</option>
-                <option value="Petrol">Petrol</option>
+                <option value="Rent">Rent</option>
                 <option value="Travel">Travel</option>
-                <option value="Health">Health</option>
+                <option value="Medical">Medical</option>
+                <option value="Investment">Investment</option>
+                <option value="Personal">Personal</option>
             </select>
             <br />
             <button type="submit">Submit</button>
 
-           
+
         </form>
-        
+
     )
 };
 export default DailyExpenseForm;
